@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>My front-end Blog</title>
+  <title>胡豪的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前端">
 <meta property="og:type" content="website">
-<meta property="og:title" content="My front-end Blog">
+<meta property="og:title" content="胡豪的博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="My front-end Blog">
+<meta property="og:site_name" content="胡豪的博客">
 <meta property="og:description" content="前端">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My front-end Blog">
+<meta name="twitter:title" content="胡豪的博客">
 <meta name="twitter:description" content="前端">
   
-    <link rel="alternative" href="/atom.xml" title="My front-end Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="胡豪的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -158,6 +158,68 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-huhao1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/28/huhao1/">==的隐式转换</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/28/huhao1/" class="archive-article-date">
+  	<time datetime="2019-04-28T01:13:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="两个等于号只判断值是否相等"><a href="#两个等于号只判断值是否相等" class="headerlink" title="两个等于号只判断值是否相等 "></a>两个等于号只判断值是否相等 </h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">     对象</span><br><span class="line">        \</span><br><span class="line">        字符串   布尔值</span><br><span class="line">          \      /</span><br><span class="line">            数值</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">1. 对象和布尔值比较</span><br><span class="line">对象和布尔值进行比较时，对象先转换为字符串，然后再转换为数字，布尔值直接转换为数字</span><br><span class="line">[] == true;  //false  []转换为字符串&apos;&apos;,然后转换为数字0,true转换为数字1，所以为false</span><br><span class="line">2. 对象和字符串比较</span><br><span class="line">对象和字符串进行比较时，对象转换为字符串，然后两者进行比较。</span><br><span class="line">[1,2,3] == &apos;1,2,3&apos; // true  [1,2,3]转化为&apos;1,2,3&apos;，然后和&apos;1,2,3&apos;， so结果为true;</span><br><span class="line">3. 对象和数字比较</span><br><span class="line">对象和数字进行比较时，对象先转换为字符串，然后转换为数字，再和数字进行比较。</span><br><span class="line">[1] == 1;  // true  `对象先转换为字符串再转换为数字，二者再比较 [1] =&gt; &apos;1&apos; =&gt; 1 所以结果为true</span><br><span class="line">4. 字符串和数字比较</span><br><span class="line">字符串和数字进行比较时，字符串转换成数字，二者再比较。</span><br><span class="line">&apos;1&apos; == 1 // true</span><br><span class="line">5. 字符串和布尔值比较</span><br><span class="line">字符串和布尔值进行比较时，二者全部转换成数值再比较。</span><br><span class="line">&apos;1&apos; == true; // true </span><br><span class="line">6. 布尔值和数字比较</span><br><span class="line">布尔值和数字进行比较时，布尔转换为数字，二者比较。</span><br><span class="line">true == 1 // true</span><br><span class="line">来看一个有趣的题</span><br><span class="line">[] == false;</span><br><span class="line">![] == false;</span><br><span class="line">还有一些需要记住的，像：</span><br><span class="line">undefined == null //true undefined和null 比较返回true，二者和其他值比较返回false</span><br><span class="line">Number(null) //0</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/28/huhao1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-post-title-with-whitespace" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
