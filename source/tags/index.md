@@ -1,6 +1,7 @@
 ---
 title: tags
 date: 2019-08-29 17:09:57
-type: tags
+slug: tags 
+noDate: "true"
 comments: false
 ---
