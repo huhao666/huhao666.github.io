@@ -3,7 +3,6 @@ title: 如何在nuxt中使用Vuex做登陆管理
 date: 2019-11-4 10:45:08
 author: 胡豪
 categories:
-  - JavaScript
   - vue
 tags:
   - SSR

@@ -3,9 +3,9 @@ title: Fetch与Promise
 date: 2020-01-07 14:21:55
 author: 胡豪
 categories: 
-  - js
+  - JavaScript
 tags:
-  - js 
+  - JavaScript
 ---
 
 ## 什么是Fecth
