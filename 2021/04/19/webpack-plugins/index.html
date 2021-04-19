@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>webpack loader | 胡豪的博客</title>
+  <title>webpack-plugins | 胡豪的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="webpack">
@@ -11,18 +11,18 @@
   
   
   
-  <meta name="description" content="loaderloader是有执行顺序的，多个loader执行,use：数组里从右到左，从下往上 资源文件打包配置项url-loader与file-loader区别url-loader会把文件转成base64 打包进js里limit就是 小于【给定参数】的打包进js里，大于【给定参数】的打包出的还是文件的形式[hash:7]的意思是，打包出的文件名称 是7位的hash值，如’66-7ecf3b4.j">
+  <meta name="description" content="pluginswebpack中使用plugins 在输出项，自动生成html入口文件1plugins:[new HtmlWebpackPlugin()], 但是实际情况中，html内有个root根节点，怎么在项目中比如src文件夹内，新建index.html文件，定义一个模板123456789101112&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;">
 <meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack loader">
-<meta property="og:url" content="http://yoursite.com/2021/04/13/webpack-loader/index.html">
+<meta property="og:title" content="webpack-plugins">
+<meta property="og:url" content="http://yoursite.com/2021/04/19/webpack-plugins/index.html">
 <meta property="og:site_name" content="胡豪的博客">
-<meta property="og:description" content="loaderloader是有执行顺序的，多个loader执行,use：数组里从右到左，从下往上 资源文件打包配置项url-loader与file-loader区别url-loader会把文件转成base64 打包进js里limit就是 小于【给定参数】的打包进js里，大于【给定参数】的打包出的还是文件的形式[hash:7]的意思是，打包出的文件名称 是7位的hash值，如’66-7ecf3b4.j">
+<meta property="og:description" content="pluginswebpack中使用plugins 在输出项，自动生成html入口文件1plugins:[new HtmlWebpackPlugin()], 但是实际情况中，html内有个root根节点，怎么在项目中比如src文件夹内，新建index.html文件，定义一个模板123456789101112&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-04-13T08:46:27.752Z">
+<meta property="og:updated_time" content="2021-04-19T01:23:23.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack loader">
-<meta name="twitter:description" content="loaderloader是有执行顺序的，多个loader执行,use：数组里从右到左，从下往上 资源文件打包配置项url-loader与file-loader区别url-loader会把文件转成base64 打包进js里limit就是 小于【给定参数】的打包进js里，大于【给定参数】的打包出的还是文件的形式[hash:7]的意思是，打包出的文件名称 是7位的hash值，如’66-7ecf3b4.j">
+<meta name="twitter:title" content="webpack-plugins">
+<meta name="twitter:description" content="pluginswebpack中使用plugins 在输出项，自动生成html入口文件1plugins:[new HtmlWebpackPlugin()], 但是实际情况中，html内有个root根节点，怎么在项目中比如src文件夹内，新建index.html文件，定义一个模板123456789101112&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;">
   
     <link rel="alternate" href="/atom.xml" title="胡豪的博客" type="application/atom+xml">
   
@@ -162,7 +162,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-webpack-loader" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-webpack-plugins" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -170,7 +170,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      webpack loader
+      webpack-plugins
     </h1>
   
 
@@ -178,15 +178,15 @@
     
     <div class="article-meta">
       
-	<a href="/2021/04/13/webpack-loader/" class="article-date">
-	  <time datetime="2021-04-13T08:25:00.000Z" itemprop="datePublished">2021-04-13</time>
+	<a href="/2021/04/19/webpack-plugins/" class="article-date">
+	  <time datetime="2021-04-19T01:13:55.000Z" itemprop="datePublished">2021-04-19</time>
 	</a>
 
       
     <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
 
       
-<a href="/2021/04/13/webpack-loader/" class="article-author">
+<a href="/2021/04/19/webpack-plugins/" class="article-author">
 胡豪
 </a>
 
@@ -202,15 +202,12 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h2><p>loader是有执行顺序的，多个loader执行,use：数组里从右到左，从下往上</p>
-<h3 id="资源文件打包配置项"><a href="#资源文件打包配置项" class="headerlink" title="资源文件打包配置项"></a>资源文件打包配置项</h3><p>url-loader与file-loader区别<br>url-loader会把文件转成base64 打包进js里<br>limit就是 小于【给定参数】的打包进js里，大于【给定参数】的打包出的还是文件的形式<br>[hash:7]的意思是，打包出的文件名称 是7位的hash值，如’66-7ecf3b4.jpg’<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">rules:[&#123;</span><br><span class="line">      test:<span class="regexp">/\.(jpg|png|gif)$/</span>,</span><br><span class="line">      use:&#123;</span><br><span class="line">        loader:<span class="string">'url-loader'</span>,</span><br><span class="line">        options:&#123;</span><br><span class="line">          name:<span class="string">'[name]-[hash:7].[ext]'</span>,</span><br><span class="line">          outputPath:<span class="string">'images/'</span>,</span><br><span class="line">          limit: <span class="number">1024</span>    <span class="comment">//1024是1kb          </span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="给css自动加浏览器前缀"><a href="#给css自动加浏览器前缀" class="headerlink" title="给css自动加浏览器前缀"></a>给css自动加浏览器前缀</h3><p>使用postcss-loader<br>先安装<code>npm i postcss-loader -D</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">      use: [<span class="string">"style-loader"</span>, <span class="string">"css-loader"</span>, <span class="string">"postcss-loader"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<p>webpack配置文件同级目录下，定义postcss.config.js文件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">	plugins:[<span class="built_in">require</span>(<span class="string">'autoprefixer'</span>)]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>postcss使用 autoprefixer插件,还需要在package.json 里需要添加browserslist。这个是为了确定给什么版本的浏览器起作用。不写就不会生成前缀</p>
-<h3 id="css-loader常用配置项"><a href="#css-loader常用配置项" class="headerlink" title="css-loader常用配置项"></a>css-loader常用配置项</h3><p><code>importLoaders:2</code>的意思是针对import引入额外的sass文件时，在打包时也依然走postcss-loader和sass-loader这些loader<br>无论是在js里引入sass 还是在sass文件里再引入其他sass，都会依次从下到上执行这些loader<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">rules:[&#123;</span><br><span class="line">      test:<span class="regexp">/\.scss$/</span>,</span><br><span class="line">      use:[</span><br><span class="line">        <span class="string">'style-loader'</span>,</span><br><span class="line">        &#123;</span><br><span class="line">          loader:<span class="string">'css-loader'</span>,</span><br><span class="line">          options:&#123;</span><br><span class="line">            importLoaders:<span class="number">2</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'postcss-loader'</span>,</span><br><span class="line">        <span class="string">'sass-loader'</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;]</span><br></pre></td></tr></table></figure></p>
-<h3 id="css模块化"><a href="#css模块化" class="headerlink" title="css模块化"></a>css模块化</h3><p>options里配置<code>modules:true</code><br>在模块内 单独引入css 不会对别的模块造成影响<br>在模块内import css文件<code>import style from &#39;./image.scss&#39;;</code><br>js文件内调用 style.myclass </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">rules:[&#123;</span><br><span class="line">      test:<span class="regexp">/\.scss$/</span>,</span><br><span class="line">      use:[</span><br><span class="line">        <span class="string">'style-loader'</span>,</span><br><span class="line">        &#123;</span><br><span class="line">          loader:<span class="string">'css-loader'</span>,</span><br><span class="line">          options:&#123;</span><br><span class="line">            importLoaders:<span class="number">2</span>,</span><br><span class="line">            modules:<span class="literal">true</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'postcss-loader'</span>,</span><br><span class="line">        <span class="string">'sass-loader'</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;]</span><br></pre></td></tr></table></figure>
-<h3 id="打包字体文件"><a href="#打包字体文件" class="headerlink" title="打包字体文件"></a>打包字体文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rules:[&#123;</span><br><span class="line">      test:<span class="regexp">/\.(eot|ttf|svg)$/</span>,</span><br><span class="line">      use:&#123;</span><br><span class="line">        loader:<span class="string">'file-loader'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;]</span><br></pre></td></tr></table></figure>
+        <h2 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h2><p>webpack中使用plugins</p>
+<h3 id="在输出项，自动生成html入口文件"><a href="#在输出项，自动生成html入口文件" class="headerlink" title="在输出项，自动生成html入口文件"></a>在输出项，自动生成html入口文件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugins:[<span class="keyword">new</span> HtmlWebpackPlugin()],</span><br></pre></td></tr></table></figure>
+<p>但是实际情况中，html内有个root根节点，怎么<br>在项目中比如src文件夹内，新建index.html文件，定义一个模板<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>先安装’npm i html-webpack-plugin -D’<br>webpack.config.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line">plugins:[<span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">    template: <span class="string">'./index.html'</span></span><br><span class="line">  &#125;)],</span><br></pre></td></tr></table></figure></p>
+<p>这样打包后，dist目录下的index.html也会有root节点</p>
+<h3 id="使用插件，先清空打包输出的文件夹"><a href="#使用插件，先清空打包输出的文件夹" class="headerlink" title="使用插件，先清空打包输出的文件夹"></a>使用插件，先清空打包输出的文件夹</h3><p>安装clean-webpack-plugin<br><figure class="highlight plain"><figcaption><span>i clean-webpack-plugin --save-dev```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```js</span><br><span class="line">//引入</span><br><span class="line">const &#123;CleanWebpackPlugin&#125; = require(&apos;clean-webpack-plugin&apos;)</span><br><span class="line"></span><br><span class="line">plugins:[</span><br><span class="line">    new HtmlWebpackPlugin(&#123;</span><br><span class="line">      template: &apos;./src/index.html&apos;,</span><br><span class="line">      filename: &apos;index.html&apos;,</span><br><span class="line">      minify: &#123;</span><br><span class="line">        collapseWhitespace: true</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;),</span><br><span class="line">    new CleanWebpackPlugin()</span><br><span class="line">  ],</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -224,7 +221,7 @@
           </li>
           <li class="post-copyright-link">
           <strong>本文链接:  </strong>
-          <a href="/2021/04/13/webpack-loader/" target="_blank" title="webpack loader">http://yoursite.com/2021/04/13/webpack-loader/</a>
+          <a href="/2021/04/19/webpack-plugins/" target="_blank" title="webpack-plugins">http://yoursite.com/2021/04/19/webpack-plugins/</a>
           </li>
           <li class="post-copyright-license">
             <strong>版权声明:   </strong>
@@ -274,19 +271,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/04/19/webpack-plugins/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          webpack-plugins
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/03/05/网页禁止审查及一些简单禁止用户对页面操作/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/04/13/webpack-loader/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">网页禁止审查及一些简单禁止用户对页面操作</div>
+      <div class="article-nav-title">webpack loader</div>
     </a>
   
 </nav>
@@ -300,7 +288,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#loader"><span class="nav-number">1.</span> <span class="nav-text">loader</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#资源文件打包配置项"><span class="nav-number">1.1.</span> <span class="nav-text">资源文件打包配置项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给css自动加浏览器前缀"><span class="nav-number">1.2.</span> <span class="nav-text">给css自动加浏览器前缀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-loader常用配置项"><span class="nav-number">1.3.</span> <span class="nav-text">css-loader常用配置项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css模块化"><span class="nav-number">1.4.</span> <span class="nav-text">css模块化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打包字体文件"><span class="nav-number">1.5.</span> <span class="nav-text">打包字体文件</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#plugins"><span class="nav-number">1.</span> <span class="nav-text">plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在输出项，自动生成html入口文件"><span class="nav-number">1.1.</span> <span class="nav-text">在输出项，自动生成html入口文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用插件，先清空打包输出的文件夹"><span class="nav-number">1.2.</span> <span class="nav-text">使用插件，先清空打包输出的文件夹</span></a></li></ol></li></ol>
     
     </div>
   </aside>
