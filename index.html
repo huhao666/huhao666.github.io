@@ -9,17 +9,17 @@
   
   
   
-  <meta name="description" content="前端,擅长研究各项计算机技能，喜欢折腾，爱好美剧等一系列烧脑的东西。">
+  <meta name="description" content="前端,擅长研究各项计算机技能，喜欢美剧、科幻等一系列烧脑的东西。">
 <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
 <meta property="og:type" content="website">
 <meta property="og:title" content="胡豪的博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="胡豪的博客">
-<meta property="og:description" content="前端,擅长研究各项计算机技能，喜欢折腾，爱好美剧等一系列烧脑的东西。">
+<meta property="og:description" content="前端,擅长研究各项计算机技能，喜欢美剧、科幻等一系列烧脑的东西。">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="胡豪的博客">
-<meta name="twitter:description" content="前端,擅长研究各项计算机技能，喜欢折腾，爱好美剧等一系列烧脑的东西。">
+<meta name="twitter:description" content="前端,擅长研究各项计算机技能，喜欢美剧、科幻等一系列烧脑的东西。">
   
     <link rel="alternate" href="/atom.xml" title="胡豪的博客" type="application/atom+xml">
   
@@ -140,7 +140,7 @@
         
           <div class="homelogoback" >
             <h1><a href="#content" id="logo">胡豪的博客</a></h1>
-            <h3>前端,擅长研究各项计算机技能，喜欢折腾，爱好美剧等一系列烧脑的东西。</h3>
+            <h3>前端,擅长研究各项计算机技能，喜欢美剧、科幻等一系列烧脑的东西。</h3>
             <h5>胡豪</h5>
             <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
           </div>
@@ -191,6 +191,126 @@
       <div id="content" class="outer">
         
           <section id="main" style="float:none;">
+  
+    <article id="post-webpack-sourceMap"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/04/23/webpack-sourceMap/">webpack-sourceMap</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/04/23/webpack-sourceMap/" class="article-date">
+	  <time datetime="2021-04-23T09:04:47.000Z" itemprop="datePublished">2021-04-23</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+
+      
+<a href="/2021/04/23/webpack-sourceMap/" class="article-author">
+胡豪
+</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          sourceMapsourceMap 它是一个映射关系，他知道dist目录下main.js文件的某一行实际上对应的是src目录下index.js文件中的一行
+就能知道打包后文件的错误 定位 在你开发文件下源代码的位置
+它能精确到具体第几行第几列 但这样的映射很耗费性能 
+加个cheap,只会精确到第几行不会第几列,build的速度会快
+在devtool里配置12345devtool:'source-map'   //打包后dist目录下会生成.map文件//'inline-source-m...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/04/23/webpack-sourceMap/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-webpack-entry-output"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/04/22/webpack-entry-output/">webpack-entry/output</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/04/22/webpack-entry-output/" class="article-date">
+	  <time datetime="2021-04-22T08:55:43.000Z" itemprop="datePublished">2021-04-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+
+      
+<a href="/2021/04/22/webpack-entry-output/" class="article-author">
+胡豪
+</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          entery与output项目的输入与输出项配置
+如果想打包生成多个js输出原代码：输出一个dist.js12345entry: './src/index.js',output:&#123;  filename : 'dist.js',  path: path.resolve(__dirname, 'dist')&#125;
+修改后12345678910//输出项 dist.js 可以修改占位符name（生成的js名字对应入口文件的key值），或者hash//如下打包后生成两个js：mia...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/04/22/webpack-entry-output/#more">阅读全文</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
   
     <article id="post-webpack-plugins"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
@@ -650,123 +770,6 @@ Fetch 的出现就是为了解决 XHR 的问题，它实现了 Promi...
         </p>
         <p class="article-more-link">
           <a href="/2020/01/03/Vue中使用mixin/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-修改img的src属性刷新图片时，图片地址相同图片无变化的问题"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/12/18/修改img的src属性刷新图片时，图片地址相同图片无变化的问题/">浏览器图片缓存问题（图片改变页面无变化）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/12/18/修改img的src属性刷新图片时，图片地址相同图片无变化的问题/" class="article-date">
-	  <time datetime="2019-12-18T07:59:04.000Z" itemprop="datePublished">2019-12-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-
-      
-<a href="/2019/12/18/修改img的src属性刷新图片时，图片地址相同图片无变化的问题/" class="article-author">
-胡豪
-</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          前言修改img的src属性刷新图片时，如果图片地址相同，图片无变化的问题
-最主要的原因浏览器会有缓存，它会认为图片没有变化，是相同的
-项目中需要上传图片预览.但是第二次上传图片显示的时候发现之前的图片没有改变.后经过分析发现是地址相同第二次改变img src属性的时候图片未发生改变,浏览器第二次不会去请求服务器 
-解决方案很easy:在修改img的src属性的时候加上一个随机数即可,让浏览器以为每次请求的服务器都不同.123image.attr('src', data.message+'?...
-        </p>
-        <p class="article-more-link">
-          <a href="/2019/12/18/修改img的src属性刷新图片时，图片地址相同图片无变化的问题/#more">阅读全文</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Vue写tab选项卡"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/12/17/Vue写tab选项卡/">Vue写tab选项卡</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2019/12/17/Vue写tab选项卡/" class="article-date">
-	  <time datetime="2019-12-17T01:22:18.000Z" itemprop="datePublished">2019-12-17</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/vue/">vue</a>
-
-      
-<a href="/2019/12/17/Vue写tab选项卡/" class="article-author">
-胡豪
-</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Vue写tab选项卡固定选项的写法遇到UI上只有2个或者3个固定选项的写法12345678910111213141516171819202122232425262728293031323334353637//2个的情况只要用一个开关字段来控制显示隐藏即可//3个及以上的写法，可以价格tabId来控制&lt;div id="app"&gt;  &lt;!-- tab 选项 --&gt;  &lt;div class="tab"&gt;    &lt;div class="tag" :clas...
-        </p>
-        <p class="article-more-link">
-          <a href="/2019/12/17/Vue写tab选项卡/#more">阅读全文</a>
         </p>
       
     </div>
