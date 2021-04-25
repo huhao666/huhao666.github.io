@@ -28,7 +28,7 @@ devtool:'source-map'   //打包后dist目录下会生成.map文件
 //'eval'              执行效率最快，通过evalJs的这种执行形式生成对应关系，不会生成.map文件 也不会生成base64代码 和其他的，比较复杂的情况下，提示可能不全面
 ```
 
-### 建议
+### 如何配置建议
 开发环境下(development)：
 ```js
 module.export ={
