@@ -44,3 +44,34 @@ module.export ={
   devtool:'cheap-module-source-map'
 }
 ```
+
+
+### 使用 WebpackDevServer 提升开发效率
+修改源代码后会自动打包
+#### 方法一：
+package.json
+```js
+"scripts": {
+  "watch": "webpack --watch"
+}
+```
+#### 方法二：
+安装`npm i webpack-dev-server -D`
+package.json：
+```js
+"scripts": {
+  "start": "webpack-dev-server",
+}
+```
+webpack.config.js：
+```js
+devServer:{
+  contentBase:'./dist',
+  open:true,                       //运行start命令后，自动帮我们打开浏览器
+  port:8080,
+  proxy:{                          //跨域代理
+    '/api':'http://localhost:3000'
+  }
+}
+```
+比--watch好的地方，不仅会监听文件变化自动打包，还会帮我们自动刷新浏览器
